@@ -17,7 +17,7 @@ const Home: NextPage = ({ projectList }: any) => {
             {
               url: 'https://raw.githubusercontent.com/iNorthIsle/og-image-service/main/public/og_image.png',
               width: 800,
-              height: 560,
+              height: 460,
               alt: 'Black IDE',
               type: 'image/jpeg',
             }

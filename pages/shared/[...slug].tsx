@@ -7,17 +7,17 @@ const ProjectItem = ({ project }: any) => {
 	return (
 		<>
 			<NextSeo
-				title={`${project.name} created by Black IDE: Cloud-based Graphic EVM Solidity IDE`}
+				title={`${project.name} shared by Black IDE: Cloud-based Graphic EVM Solidity IDE`}
 				description="Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ...."
 				openGraph={{
-					url: 'https://ide.ide.black',
-					title: `${project.name} created by Black IDE: Cloud-based Graphic EVM Solidity IDE`,
+					url: 'https://ide.black',
+					title: `${project.name} shared by Black IDE: Cloud-based Graphic EVM Solidity IDE`,
 					description: "Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ....",
 					images: [
 						{
 							url: `${process.env.NEXT_PUBLIC_OG_IMG_SERVICE_URL}/${project.name}.png`,
 							width: 800,
-							height: 560,
+							height: 460,
 							alt: 'Black IDE',
 							type: 'image/jpeg',
 						}
