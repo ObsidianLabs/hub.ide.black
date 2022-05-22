@@ -9,6 +9,9 @@ module.exports = {
         dark: '#25272d',
         primary: '#646cb4',
         secondary: '#9ba1b0'
+      },
+      dropShadow: {
+        'card': '0 12px 18px #10111f',
       }
     },
   },
