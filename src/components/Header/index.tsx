@@ -4,7 +4,7 @@ const Header = () => {
 	return (
 		<header className="flex py-4 text-white header bg-dark">
 			<div className='container flex items-center justify-between mx-auto '>
-				<h1 className='text-lg font-bold'>
+				<h1 className='text-lg font-medium'>
 					<Link href="/">
 						<div className='flex items-center cursor-pointer'>
 							<img src='/logo.png' className='w-10 mr-4' />Black IDE Hub

@@ -31,11 +31,11 @@ const Home: NextPage = ({ projectList }: any) => {
         }}
       />
       <div className="">
-        <div className='container m-auto my-24 text-center'>
-          <h1 className='text-4xl'>Discover intresting smart contract projects shared by <a href='https://ide.black' className='font-bold text-primary hover:underline'>Black IDE</a>.</h1>
+        <div className='container m-auto my-24 text-center cursor-default'>
+          <h1 className='text-2xl font-medium'>Discover intresting smart contract projects shared by <a href='https://ide.black' className='text-primary hover:underline'>Black IDE</a>.</h1>
         </div>
-        <main className="container w-full max-w-6xl px-24 pb-10 mx-auto">
-          <div className='grid grid-cols-3 gap-8'>
+        <main className="container w-full max-w-6xl px-12 md:px-24 pb-10 mx-auto">
+          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
             {
               projectList.map(({ _id, name: projectName, user, createdAt }: any) => {
                 return <div key={_id}><ProjectCard projectName={projectName} userInfo={user[0]} createTime={dayjs(createdAt).format('YYYY MM-DD')} /></div>
