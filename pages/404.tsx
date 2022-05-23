@@ -3,7 +3,7 @@ import React from "react";
 const Error404Page = () => {
   return (
     <main className="container mx-auto text-center">
-      <div className="mt-48 text-4xl text-secondary">
+      <div className="mt-48 text-3xl font-light text-secondary">
         Ops! The Resource Not Found.
       </div>
       <div className="mt-6">
