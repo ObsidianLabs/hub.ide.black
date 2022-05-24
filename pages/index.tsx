@@ -8,11 +8,11 @@ const Home: NextPage = ({ projectList }: any) => {
     <>
       <NextSeo
         title="Check out my project on Black IDE"
-        description="Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ...."
+        description="Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ..."
         openGraph={{
           url: 'https://hub.ide.black',
-          title: 'Check out my project on Black IDE',
-          description: 'Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ....',
+          title: 'Check out my project on Black IDE.',
+          description: 'Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ...',
           images: [
             {
               url: 'https://raw.githubusercontent.com/iNorthIsle/og-image-service/main/public/og_image.png',
@@ -30,7 +30,7 @@ const Home: NextPage = ({ projectList }: any) => {
           cardType: 'summary_large_image',
         }}
       />
-      <div className="">
+      <div className="font-sans-hack">
         <div className='container m-auto my-24 text-center cursor-default'>
           <h1 className='text-2xl font-medium'>Discover intresting smart contract projects shared by <a href='https://ide.black' className='text-primary hover:underline'>Black IDE</a>.</h1>
         </div>
