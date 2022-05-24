@@ -7,12 +7,12 @@ const Home: NextPage = ({ projectList }: any) => {
   return (
     <>
       <NextSeo
-        title="Hub For Black IDE: Cloud-based Graphic EVM Solidity IDE"
-        description="Discover intresting smart contract projects shared by Black IDE."
+        title="Check out my project on Black IDE"
+        description="Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ...."
         openGraph={{
           url: 'https://hub.ide.black',
-          title: 'Hub For Black IDE: Cloud-based Graphic EVM Solidity IDE',
-          description: 'Discover intresting smart contract projects shared by Black IDE.',
+          title: 'Check out my project on Black IDE',
+          description: 'Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ....',
           images: [
             {
               url: 'https://raw.githubusercontent.com/iNorthIsle/og-image-service/main/public/og_image.png',
