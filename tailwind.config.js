@@ -12,7 +12,10 @@ module.exports = {
       },
       dropShadow: {
         'card': '0 12px 18px #10111f',
-      }
+      },
+      fontFamily: {
+        'sans-hack': ['Hack', '"Open Sans"', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Roboto', '"Helvetica Neue"'],
+      },
     },
   },
   plugins: [],

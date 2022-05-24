@@ -30,7 +30,7 @@ const ProjectItem = ({ project }: any) => {
 					cardType: 'summary_large_image',
 				}}
 			/>
-			<div className="container flex flex-row content-center pt-24 mx-auto">
+			<div className="container flex flex-row content-center pt-24 mx-auto font-sans-hack">
 				<div className='w-1/3 mx-auto bg-white rounded-md drop-shadow-card'>
 					<div className='text-black'>
 						<div className='overflow-hidden rounded-t-md'>
