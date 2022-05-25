@@ -15,7 +15,7 @@ const ProjectItem = ({ project }: any) => {
 					description: "Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ....",
 					images: [
 						{
-							url: `${process.env.NEXT_PUBLIC_OG_IMG_SERVICE_URL}/${project.name}.png`,
+							url: `https://raw.githubusercontent.com/dandansad/images-servers/master/public/og_share_image.png`,
 							width: 800,
 							height: 460,
 							alt: 'Black IDE',
