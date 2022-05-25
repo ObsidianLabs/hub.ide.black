@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 const Header = () => {
 	return (
-		<header className="flex py-4 px-6 sm:px-10 lg:px-20 text-white header bg-dark">
+		<header className="font-sans-hack flex py-4 px-6 sm:px-10 lg:px-20 text-white header bg-dark">
 			<div className='container flex items-center justify-between mx-auto '>
 				<h1 className='text-lg font-medium'>
 					<Link href="/">
