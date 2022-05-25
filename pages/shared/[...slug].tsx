@@ -11,7 +11,7 @@ const ProjectItem = ({ project }: any) => {
 				description="Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ...."
 				openGraph={{
 					url: 'https://ide.black',
-					title: project.name,
+					title: `Check out my project ${project.name} on Black IDE`,
 					description: "Black IDE is a cross-platform graphic IDE for smart contract development on Ethereum and EVM-compatible blockchains. Enjoy a brand-new unified solidity dev experience with complete solidity development toolchains anywhere you code and deploy instantly to Ethereum, BNB, Avalanche, Polygon, Fantom, and more ....",
 					images: [
 						{
@@ -22,7 +22,7 @@ const ProjectItem = ({ project }: any) => {
 							type: 'image/jpeg',
 						}
 					],
-					site_name: 'Check out my project on Black IDE',
+					site_name: 'Black IDE',
 				}}
 				twitter={{
 					handle: '@obsidian_labs',
