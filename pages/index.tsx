@@ -2,8 +2,34 @@ import type { NextPage } from 'next'
 import ProjectCard from '../src/components/ProjectCard'
 import dayjs from 'dayjs'
 import { NextSeo } from 'next-seo'
+import React from 'react'
 
-const Home: NextPage = ({ projectList }: any) => {
+const Home: NextPage = () => {
+  const [loadStatus, setLoadStatus] = React.useState(true)
+  const [loading, setLoading] = React.useState(true)
+  const [pageIndex, setPageIndex] = React.useState(1)
+  const [projectList, setProjectList] = React.useState([])
+  const pageSize = 15
+
+  function loadMore() {
+    setLoadStatus(!loadStatus)
+    setLoading(!loading)
+    setPageIndex(pageIndex + 1)
+  }
+
+  async function getProjectList () {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/eth/project?pageIndex=${pageIndex}&pageSize=${pageSize}`)
+    const data = await res.json()
+    
+    if (data.length == pageSize) setLoadStatus(!loadStatus)
+    if (pageIndex > 1) setLoading(!loading)
+    setProjectList((projectList.concat(data)))
+  }
+
+  React.useEffect(() => {
+    getProjectList()
+  },[pageIndex])
+  
   return (
     <>
       <NextSeo
@@ -42,22 +68,21 @@ const Home: NextPage = ({ projectList }: any) => {
               })
             }
           </div>
+          <div className='py-5 text-center'>
+            <button hidden={loadStatus} onClick={loadMore} className="px-4 py-1 mr-4 rounded-md bg-gray-600">Load More</button>
+            <div hidden={loading}>
+              <div className='flex justify-center text-lg'>
+                <div className="w-6 h-6 border-4 border-blue-400 border-dotted rounded-full animate-spin mr-2" />
+                Loading...
+              </div>
+            </div>
+          </div>
         </main>
       </div>
     </>
   )
 }
 
-export const getServerSideProps = async ({ query }: any) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/eth/project`)
-  const data = await res.json()
-
-  return {
-    props: {
-      projectList: data
-    },
-  }
-};
 
 
 export default Home
