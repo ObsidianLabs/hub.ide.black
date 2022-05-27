@@ -2,6 +2,27 @@ import Image from 'next/image'
 import Link from 'next/link';
 import { NextSeo } from 'next-seo'
 
+interface IBaseInfo  {
+	_id: string;
+	createdAt: string;
+	updatedAt: string;
+	__v: number;
+}
+
+interface IUserInfo extends IBaseInfo {
+	projectLimit: number;
+	username: string;
+	avatar: string;
+	providers: any[];
+}
+
+interface IProject extends IBaseInfo {
+	userId: String;
+	name: number;
+	public: boolean;
+	user: IUserInfo[];
+}
+
 const ProjectItem = ({ project }: any) => {
 	const userInfo = project.user[0]
 	return (
@@ -63,10 +84,14 @@ const ProjectItem = ({ project }: any) => {
 export const getServerSideProps = async ({ query }: any) => {
 	const [username, projectname] = query.slug
 	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/eth/project/public/${username}/${projectname}`)
-	const project = await res.json()
+	const project: IProject[] = await res.json()
+	const filetedProject = project.find((project: IProject) => {
+		if (project.user[0].username === username && project.name === projectname) return true
+	})
+
 	return {
 		props: {
-			project: project[0]
+			project: filetedProject
 		},
 	};
 };
