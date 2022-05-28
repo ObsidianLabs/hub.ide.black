@@ -1,8 +1,21 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
-  crossOrigin: 'anonymous'.
+  crossOrigin: 'anonymous',
+  async headers() {
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Origin", value: "*" },
+          {
+            key: "Access-Control-Allow-Origin", value: "cross-origin"
+          }
+        ],
+      },
+    ]
+  },
   images: {
-    domains: ['og-image-service-ten.vercel.app', 'avatars.githubusercontent.com'],
+    domains: ['avatars.githubusercontent.com'],
   },
 }

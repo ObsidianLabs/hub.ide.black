@@ -1,8 +1,9 @@
 import Image from 'next/image'
-import Link from 'next/link';
 import { NextSeo } from 'next-seo'
+import projectBgImg from '../../public/project_bg.png'
+import logoImg from '../../public/logo.png'
 
-interface IBaseInfo  {
+interface IBaseInfo {
 	_id: string;
 	createdAt: string;
 	updatedAt: string;
@@ -54,11 +55,17 @@ const ProjectItem = ({ project }: any) => {
 			<div className="container flex flex-row content-center pt-24 mx-auto font-sans-hack">
 				<div className='w-1/3 mx-auto bg-white rounded-md drop-shadow-card'>
 					<div className='text-black'>
-						<div className='overflow-hidden rounded-t-md'>
-							<Image src={`${process.env.NEXT_PUBLIC_OG_IMG_SERVICE_URL}/${project.name}.png`} layout='responsive' width='100%' height='60px' />
+						<div className='relative bg-gray-500 aspect-video'>
+							<div className='absolute top-0 bottom-0 left-0 right-0 z-10 text-center'>
+								<div className='relative w-8 h-8 mx-auto mt-12'>
+									<Image layout='fill' className='aspect-video' src={logoImg} />
+								</div>
+								<h2 className='mt-2 text-2xl text-white'>{project.name}</h2>
+							</div>
+							<Image layout='fill' className='aspect-video' src={projectBgImg} />
 						</div>
 						<div className='py-4 text-center'>
-							<div className='relative inline-block w-8 h-8 overflow-hidden rounded-full'>
+							<div className='relative inline-block w-8 h-8 overflow-hidden bg-gray-500 rounded-full'>
 								<Image className="inline-block w-6 h-6 ring-1 ring-white" layout='fill' src={userInfo.avatar} />
 							</div>
 							<h3 className='text-xl '>{userInfo.username} </h3>
@@ -81,10 +88,17 @@ const ProjectItem = ({ project }: any) => {
 	)
 }
 
-export const getServerSideProps = async ({ query }: any) => {
+export const getServerSideProps = async ({ query, res }: any) => {
 	const [username, projectname] = query.slug
-	const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/eth/project/public/${username}/${projectname}`)
-	const project: IProject[] = await res.json()
+	const result = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/v1/eth/project/public/${username}/${projectname}`)
+
+	const project: IProject[] = result && await result.json()
+	if (project.length === 0) {
+		return {
+			notFound: true
+		};
+	}
+
 	const filetedProject = project.find((project: IProject) => {
 		if (project.user[0].username === username && project.name === projectname) return true
 	})

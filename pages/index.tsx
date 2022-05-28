@@ -60,8 +60,8 @@ const Home: NextPage = () => {
         <div className='container m-auto my-24 text-center cursor-default'>
           <h1 className='text-2xl font-medium'>Discover intresting smart contract projects shared by <a href='https://ide.black' className='text-primary hover:underline'>Black IDE</a>.</h1>
         </div>
-        <main className="container w-full max-w-6xl px-12 md:px-24 pb-10 mx-auto">
-          <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8'>
+        <main className="container w-full max-w-6xl px-12 pb-10 mx-auto md:px-24">
+          <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
             {
               projectList.map(({ _id, name: projectName, user, createdAt }: any) => {
                 return <div key={_id}><ProjectCard projectName={projectName} userInfo={user[0]} createTime={dayjs(createdAt).format('YYYY MM-DD')} /></div>
@@ -69,10 +69,10 @@ const Home: NextPage = () => {
             }
           </div>
           <div className='py-5 text-center'>
-            <button hidden={loadStatus} onClick={loadMore} className="px-4 py-1 mr-4 rounded-md bg-gray-600">Load More</button>
+            <button hidden={loadStatus} onClick={loadMore} className="px-4 py-1 mr-4 bg-gray-600 rounded-md">Load More</button>
             <div hidden={loading}>
               <div className='flex justify-center text-lg'>
-                <div className="w-6 h-6 border-4 border-blue-400 border-dotted rounded-full animate-spin mr-2" />
+                <div className="w-6 h-6 mr-2 border-4 border-blue-400 border-dotted rounded-full animate-spin" />
                 Loading...
               </div>
             </div>
