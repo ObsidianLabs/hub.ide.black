@@ -56,7 +56,7 @@ const Home: NextPage = () => {
           cardType: 'summary_large_image',
         }}
       />
-      <div className="font-sans-hack">
+      <div className="font-open-sans">
         <div className='container m-auto my-24 text-center cursor-default'>
           <h1 className='text-2xl font-medium'>Discover intresting smart contract projects shared by <a href='https://ide.black' className='text-primary hover:underline'>Black IDE</a>.</h1>
         </div>
