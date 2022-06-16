@@ -26,7 +26,7 @@ const ProjectCard = ({ projectName, createTime, userInfo }: any) => {
 						<div className='flex justify-between mt-4 mb-2 text-sm text-gray-500'>
 							<div className='flex items-center'>
 								<div className='relative w-4 h-4 mr-2 overflow-hidden rounded-full aspect-square'>
-									<Image layout='fill' loader={({ src }) => src} referrerPolicy='no-referrer' className="inline-block w-4 h-4 mr-2 overflow-hidden rounded-full ring-1 ring-white" height={24} src={userInfo.avatar} />
+									<Image crossOrigin='anonymous' layout='fill' loader={({ src }) => src} referrerPolicy='no-referrer' className="inline-block w-4 h-4 mr-2 overflow-hidden rounded-full ring-1 ring-white" height={24} src={userInfo.avatar} />
 								</div>
 								<span className='font-medium'>{userInfo.username}</span>
 							</div>
