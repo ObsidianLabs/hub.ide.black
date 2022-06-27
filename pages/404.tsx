@@ -7,7 +7,9 @@ const Error404Page = () => {
         Ops! The Resource Not Found.
       </div>
       <div className="mt-6">
-        <button className="px-4 py-1 mr-4 rounded-md bg-primary">Back to Home</button>
+        <a href="/">
+          <button className="px-4 py-1 mr-4 rounded-md bg-primary">Back to Home</button>
+        </a>
       </div>
     </main>
   );
