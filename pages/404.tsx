@@ -8,7 +8,7 @@ const Error404Page = () => {
       </div>
       <div className="mt-6">
         <a href="/">
-          <button className="px-4 py-1 mr-4 rounded-md bg-primary">Back to Home</button>
+          <button className="px-4 py-1 mr-4 rounded-md bg-primary">View More in Hub</button>
         </a>
       </div>
     </main>
