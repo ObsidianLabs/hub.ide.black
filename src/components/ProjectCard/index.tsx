@@ -8,7 +8,7 @@ import logoImg from '../../../public/logo.png'
 const imageMap:any = {
 	erc20: erc20Img,
 	coin: coinImg,
-	erc721Img: erc721Img
+	erc721: erc721Img
 }
 
 interface Props {
