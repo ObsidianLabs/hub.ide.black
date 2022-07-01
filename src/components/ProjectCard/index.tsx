@@ -1,8 +1,19 @@
 import Image from 'next/image'
 import projectBgImg from '../../../public/project_bg.png'
+import erc20Img from '../../../public/erc20.png'
+import coinImg from '../../../public/coin.png'
+import erc721Img from '../../../public/erc721.png'
 import logoImg from '../../../public/logo.png'
 
+const imageMap = {
+	erc20: erc20Img,
+	coin: coinImg,
+	erc721Img: erc721Img
+}
+
 const ProjectCard = ({ projectName, createTime, userInfo }: any) => {
+	const isOfficial = userInfo.username === 'BlackIDE-ObsidianLab' && userInfo._id === '629043b6deaafb003395a1c9'
+
 	if (!projectName) {
 		return null
 	}
@@ -12,14 +23,15 @@ const ProjectCard = ({ projectName, createTime, userInfo }: any) => {
 			<a href={`https://ide.black/${userInfo.username}/${projectName}`} target='_blank'>
 				<div>
 					<div className='relative aspect-video'>
-						<div className='absolute top-0 bottom-0 left-0 right-0 z-10 text-center'>
-							<div className='relative w-8 h-8 mx-auto mt-4'>
-								<Image layout='fill' className='aspect-video' src={logoImg} />
+						{
+							!isOfficial && <div className='absolute top-0 bottom-0 left-0 right-0 z-10 text-center'>
+								<div className='relative w-8 h-8 mx-auto mt-4'>
+									<Image layout='fill' className='aspect-video' src={logoImg} />
+								</div>
+								<h2 className='mt-2'>{projectName}</h2>
 							</div>
-							<h2 className='mt-2'>{projectName}</h2>
-						</div>
-						
-						<Image  referrerPolicy='no-referrer' layout='fill' className='aspect-video' src={projectBgImg} />
+						}
+						<Image referrerPolicy='no-referrer' layout='fill' className='aspect-video' src={isOfficial ? imageMap[projectName.toLowerCase()] : projectBgImg} />
 					</div>
 					<div className='px-2 py-2 border-t-2 border-secondary'>
 						<h3 className='overflow-hidden text-base text-white cursor-pointer hover:text-primary whitespace-nowrap text-ellipsis'>{projectName}</h3>
