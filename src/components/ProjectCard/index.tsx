@@ -5,13 +5,19 @@ import coinImg from '../../../public/coin.png'
 import erc721Img from '../../../public/erc721.png'
 import logoImg from '../../../public/logo.png'
 
-const imageMap = {
+const imageMap:any = {
 	erc20: erc20Img,
 	coin: coinImg,
 	erc721Img: erc721Img
 }
 
-const ProjectCard = ({ projectName, createTime, userInfo }: any) => {
+interface Props {
+	projectName: string;
+	createTime: string;
+	userInfo: Record<string, any>
+}
+
+const ProjectCard = ({ projectName, createTime, userInfo }: Props) => {
 	const isOfficial = userInfo.username === 'BlackIDE-ObsidianLab' && userInfo._id === '629043b6deaafb003395a1c9'
 
 	if (!projectName) {
