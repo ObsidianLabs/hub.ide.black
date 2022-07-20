@@ -102,6 +102,11 @@ export const getServerSideProps = async ({ query, res }: any) => {
 	const filetedProject = project.find((project: IProject) => {
 		if (project.user[0].username === username && project.name === projectname) return true
 	})
+	if (!filetedProject) {
+		return {
+			notFound: true
+		};
+	}
 
 	return {
 		props: {
