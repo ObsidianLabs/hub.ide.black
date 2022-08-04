@@ -50,7 +50,7 @@ const Home: NextPage = ({ data, selected }: any) => {
       />
       <div className="font-open-sans">
         <div className='container m-auto my-24 text-center cursor-default'>
-          <h1 className='text-2xl font-medium'>Discover intresting smart contract projects shared by <a href='https://ide.black' className='text-primary hover:underline'>Black IDE</a>.</h1>
+          <h1 className='text-2xl font-medium'>Discover interesting smart contract projects shared by <a href='https://ide.black' className='text-primary hover:underline'>Black IDE</a>.</h1>
         </div>
         <main className="container w-full max-w-6xl px-12 pb-10 mx-auto md:px-24">
           <h2 className='my-8 text-xl font-semibold'>Recommend</h2>
