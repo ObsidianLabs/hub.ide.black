@@ -3,12 +3,14 @@ import projectBgImg from '../../../public/project_bg.png'
 import erc20Img from '../../../public/erc20.png'
 import coinImg from '../../../public/coin.png'
 import erc721Img from '../../../public/erc721.png'
+import erc1155Img from '../../../public/erc1155.png'
 import logoImg from '../../../public/logo.png'
 
-const imageMap:any = {
+const imageMap: any = {
 	'erc-20': erc20Img,
-	coin: coinImg,
-	'erc-721': erc721Img
+	'coin': coinImg,
+	'erc-721': erc721Img,
+	'erc-1155': erc1155Img,
 }
 
 interface Props {
